@@ -52,7 +52,6 @@ export default function Textform() {
         <p>Your text Contains {text.split(" ").length-1} words and {text.length}</p>
         <h2>Preview</h2>
         <p className="b-2">{text}</p>
-        <p>rahul</p>
       </div>
     </div>
   </div>
