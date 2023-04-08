@@ -9,11 +9,10 @@ export default function Textform() {
     document.getElementById("Pre").innerHTML = event.target.value;
     if(text.length == 1 || text.length == 0){
       document.getElementById("FindBtn").style.visibility = "hidden";
-    }
+       }
     else{
       document.getElementById("FindBtn").style.visibility = "visible";
-
-    }
+       }
   }
   const HandleOnUpper = (event) => {
     SetText(text.toUpperCase());
@@ -48,17 +47,15 @@ export default function Textform() {
           count++;
         }
       }
-     
       document.getElementById("count").innerHTML = `${count} Results found`;
   }
   let ReplacingOne = () => {
     if(document.getElementById("replace").value != ""){
       document.getElementById("Pre").getElementsByTagName("span")[0].innerHTML = document.getElementById("replace").value;
-    }
+     }
     else{
       alert("Please Enter Something For replace")
-    }
-      
+     }
   }
   let ReplacingAll = () => {
     if(document.getElementById("replace").value != ""){
@@ -70,10 +67,8 @@ export default function Textform() {
         else{
           alert("Please Enter Something For replace")
         }
-          
   }
   
-
   return (
     <div className="mb-3" >
 
