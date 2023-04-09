@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function Textform() {
-  const [text, SetText] = useState("The Indian education system is one of the largest in the world, with over 1.5 million schools and more than 260 million students enrolled. Despite its size, the system has been criticized for several shortcomings One of the primary criticisms is the emphasis on rote learning, which prioritizes memorization over critical thinking and problem-solving skills. This approach has been criticized for not adequately preparing students for the modern workforce, which values creativity and innovation.Additionally, the system has been criticized for its lack of infrastructure, particularly in rural areas. Many schools lack basic facilities such as electricity, clean water, and functioning toilets, which can significantly impact the quality of education.The Indian education system also faces issues of inequality, with a large number of students coming from low-income families and marginalized communities struggling to access quality education. This has resulted in a significant achievement gap between different socioeconomic groups.Despite these challenges, efforts are being made to improve the Indian education system. The government has implemented several initiatives to increase enrollment and improve infrastructure, and private organizations are also contributing to the development of education in India.");
+  const [text, SetText] = useState("The Indian education system is one of the largest in the world, with over 1.5 million schools and more than 260 million students enrolled. Despite its size, the system has been criticized for several shortcomings One of the primary criticisms is the emphasis on rote learning, which prioritizes memorization over critical thinking and problem-solving skills. This approach has been criticized for not adequately preparing students for the modern workforce, which values creativity and innovation. Additionally, the system has been criticized for its lack of infrastructure, particularly in rural areas. Many schools lack basic facilities such as electricity, clean water, and functioning toilets, which can significantly impact the quality of education. The Indian education system also faces issues of inequality, with a large number of students coming from low-income families and marginalized communities struggling to access quality education. This has resulted in a significant achievement gap between different socioeconomic groups. Despite these challenges, efforts are being made to improve the Indian education system. The government has implemented several initiatives to increase enrollment and improve infrastructure, and private organizations are also contributing to the development of education in India.");
   const [textFind, SetTextFind] = useState("");
 
   const HandleOnChange = (event) => {
@@ -48,6 +48,9 @@ export default function Textform() {
         }
       }
       document.getElementById("count").innerHTML = `${count} Results found`;
+      if(event.target.value==""){
+        document.getElementById("count").innerHTML = ""
+      }
   }
   let ReplacingOne = () => {
     if(document.getElementById("replace").value != ""){
@@ -78,7 +81,7 @@ export default function Textform() {
         <textarea
           className="form-control p-3"
           id="exampleFormControlTextarea1"
-          rows="3"
+          rows="9"
           value={text}
           placeholder="Enter Text Here"
           onChange={HandleOnChange}
