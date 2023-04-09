@@ -70,13 +70,6 @@ export default function Textform() {
           alert("Please Enter Something For replace")
         }
   }
-  const Dark =()=>{
-    document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(37, 37, 37)";
-    document.getElementsByTagName("body")[0].style.color = "white"
-    document.getElementById("exampleFormControlTextarea1").style.backgroundColor = "rgb(37, 37, 37)";
-    document.getElementById("exampleFormControlTextarea1").style.color = "white";
-    document.getElementsByClassName("navbar")[0].setAttribute("data-bs-theme","dark");
-  }
   
   return (
     <div className="mb-3" >
@@ -101,7 +94,7 @@ export default function Textform() {
         <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnLower}>Lower</button>
         <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnProper}>Proper</button>
         <button type="button" className="btn btn-outline-primary m-2 " onClick={Clear}>Clear</button>
-        <button type="button" className="btn btn-outline-primary m-2 " onClick={Dark}>Dark Mode</button>
+        <button type="button" className="btn btn-outline-primary m-2 ">Dark Mode</button>
         <button id="FindBtn" className="btn btn-outline-primary m-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style={{visibility:"hidden"}}>Find</button>
         
         <div className="collapse" id="collapseExample">
