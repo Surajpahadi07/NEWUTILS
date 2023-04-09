@@ -35,7 +35,8 @@ export default function Textform() {
   }
   const HandleOnChangeFind = (event) => {
     let count = 0;
-      SetTextFind(event.target.value)
+      document.getElementById("Pre").innerHTML = text;
+      SetTextFind(event.target.value);
       let find = event.target.value;
       if(find == text.match(find)){
         var Reg = new RegExp(find, "g");
@@ -48,7 +49,8 @@ export default function Textform() {
       }
       document.getElementById("count").innerHTML = `${count} Results found`;
       if(event.target.value==""){
-        document.getElementById("count").innerHTML = ""
+        document.getElementById("count").innerHTML = "";
+        document.getElementById("Pre").innerHTML = text;
       }
   }
   let ReplacingOne = () => {
@@ -94,7 +96,6 @@ export default function Textform() {
         <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnLower}>Lower</button>
         <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnProper}>Proper</button>
         <button type="button" className="btn btn-outline-primary m-2 " onClick={Clear}>Clear</button>
-        <button type="button" className="btn btn-outline-primary m-2 ">Dark Mode</button>
         <button id="FindBtn" className="btn btn-outline-primary m-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style={{visibility:"hidden"}}>Find</button>
         
         <div className="collapse" id="collapseExample">
