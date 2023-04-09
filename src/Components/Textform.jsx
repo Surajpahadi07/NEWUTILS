@@ -35,7 +35,6 @@ export default function Textform() {
   }
   const HandleOnChangeFind = (event) => {
     let count = 0;
-    document.getElementById("Pre").innerHTML = text;
       SetTextFind(event.target.value)
       let find = event.target.value;
       if(find == text.match(find)){
