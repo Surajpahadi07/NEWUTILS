@@ -7,7 +7,7 @@ export default function Textform() {
   const HandleOnChange = (event) => {
     SetText(event.target.value);
     document.getElementById("Pre").innerHTML = event.target.value;
-    if(text.length == 1 || text.length == 0){
+    if(event.target.value == 0){
       document.getElementById("FindBtn").style.visibility = "hidden";
        }
     else{
@@ -39,7 +39,7 @@ export default function Textform() {
       SetTextFind(event.target.value);
       let find = event.target.value;
       if(find == text.match(find)){
-        var Reg = new RegExp(find, "g");
+        var Reg = new RegExp(find, "gi");
         document.getElementById("Pre").innerHTML =  text.replace(Reg,'<span>'+find+'</span>');
         let spanArr = document.getElementById("Pre").getElementsByTagName("span");
         for(let i=0;i<spanArr.length;i++){

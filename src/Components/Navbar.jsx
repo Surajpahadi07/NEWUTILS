@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 export default function Navbar(props) {
   const styley = {
     position:'absolute',
-    right:"23%",
-    top:"14px",
+    right:"25%",
+    top:"15px",
     height:"20px",
     width:"20px",
     borderRadius: "36px 35px 12px 50px"
