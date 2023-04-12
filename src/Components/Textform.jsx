@@ -15,23 +15,47 @@ export default function Textform(props) {
        }
   }
   const HandleOnUpper = (event) => {
-    SetText(text.toUpperCase());
+    if(document.getElementById("exampleFormControlTextarea1").value !== ""){
+      SetText(text.toUpperCase());
+      props.alrtt("success","Successfully text converted into Upper Case")
+    }
+    else{
+      props.alrtt("warning","Please type Something Capatalize")
+    }
   }
   const HandleOnLower = (event) => {
-    SetText(text.toLocaleLowerCase());
+    if(document.getElementById("exampleFormControlTextarea1").value !== ""){
+      SetText(text.toLocaleLowerCase());
+      props.alrtt("success","Successfully text converted into Lower Case")
+    }
+    else{
+      props.alrtt("warning","Please type Something to convert them into lower case ")
+    }
   }
   const HandleOnProper = (event) => {
-    let tempArr = text.split(" ");
-    let temp = "";
-    tempArr.forEach(element => {
+    if(document.getElementById("exampleFormControlTextarea1").value !== ""){
+      let tempArr = text.split(" ");
+      let temp = "";
+      tempArr.forEach(element => {
       element = element.charAt(0).toUpperCase() + element.substr(1, element.length).toLowerCase();
       temp = temp + " " + element;
       temp = temp.trim();
       SetText(temp)
-    })
+      props.alrtt("success","Successfully text converted into Poper Case")
+
+    })}
+    else{
+      props.alrtt("warning","Please type Something to convert them into proper case ")
+    }
   }
   const Clear = (event) => {
-    SetText("");
+    if(document.getElementById("exampleFormControlTextarea1").value !== ""){
+      SetText("");
+      props.alrtt("success","Successfully text Cleared")
+    }
+    else{
+      props.alrtt("warning","Textbox Already cleared")
+    }
   }
   const HandleOnChangeFind = (event) => {
     let count = 0;
@@ -60,7 +84,7 @@ export default function Textform(props) {
       document.getElementById("Pre").getElementsByTagName("span")[0].innerHTML = document.getElementById("replace").value;
      }
     else{
-      alert("Please Enter Something For replace")
+      props.alrtt("warning","Please Enter Something words For replace")
      }
   }
   let ReplacingAll = () => {
@@ -71,18 +95,19 @@ export default function Textform(props) {
               }
         }
         else{
-          alert("Please Enter Something For replace")
+          props.alrtt("warning","Please Enter Something For replace")
         }
   }
   
   return (
-    <div className={`mb-3 bg-${props.mode}`} >
+    <div className={`mb-3 bg-${props.mode} ${props.mode === "dark"?"text-light":"text-dark"}`}>
 
       <div className="container">
         <h2>Your Text Summary</h2>
 
         <textarea
-          className={`form-control p-3 bg-${props.mode} text-${props.mode === "dark"?"light":"dark"}`}
+          className={`form-control p-3 bg-${props.mode} ${props.mode === "dark"?"text-light":"text-dark"}`}
+          style={{backgroundColor: "rgb(48, 1, 1)",color : "white"}}
           id="exampleFormControlTextarea1"
           rows="9"
           value={text}
@@ -101,13 +126,13 @@ export default function Textform(props) {
         <button id="FindBtn" className="btn btn-outline-primary m-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style={{visibility:"hidden"}}>Find</button>
         
         <div className="collapse" id="collapseExample">
-          <input className="form-control my-3" type="search" placeholder="Search Text Here.." aria-label="Search" onChange={HandleOnChangeFind} value={textFind}></input><span id="count" style={{color:"green",fontSize:"large"}}></span>
-          <input className="form-control my-3" id="replace" type="search" placeholder="Replace Text Here.." aria-label="Search"></input>
+          <input className={`form-control my-3`} type="search" placeholder="Search Text Here.." aria-label="Search" onChange={HandleOnChangeFind} value={textFind}></input><span id="count" style={{color:"green",fontSize:"large"}}></span>
+          <input className={`form-control my-3`} id="replace" type="search" placeholder="Replace Text Here.." aria-label="Search"></input>
 
           <button onClick={ReplacingOne} className="btn btn-outline-danger m-2 " type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace</button>
           <button onClick={ReplacingAll} className="btn btn-outline-danger m-2 " type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace All</button>
         </div>
-        <div className={`bg-${props.mode} text-${props.mode === "dark"?"light":"dark"}`}>
+        <div className={`bg-${props.mode} ${props.mode === "dark"?"text-light":"text-dark"}`}>
           <h2>Your Text Summary</h2>
           <p>Your text Contains {text.split(" ").length - 1} words and {text.length} Characters</p>
           <h2>Preview</h2>
