@@ -7,9 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [Mode, setMode] = useState("dark");
-  const [AdMode, setAdMode] = useState(null);
   const [Alerted, setAlert] = useState("");
-  var val
 
   const AdvancedMode = {
     1: "primary",
@@ -26,7 +24,7 @@ function App() {
       message: msg
     })
     setTimeout(() => {
-      // setAlert(null);
+      setAlert(null);
     }, 10000);
   }
 
@@ -41,40 +39,41 @@ function App() {
       document.body.style.backgroundColor = "#212529";
       Alerting("success", "Successfully Enabled Dark Mode")
     }
+    console.log("val")
   }
 
-  const AdvancedToggle = () => {
-    if (val == 1) {
+  const AdvancedToggle = (val) => {
+    if (val === 1) {
       setMode("primary");
-      document.body.style.backgroundColor = "white";
-      Alerting("success", "Successfully Enabled Light Mode")
+      document.body.style.backgroundColor = "#0d6efd";
+      Alerting("success", "Successfully Enabled primary Mode")
     }
-    else if (val == 2) {
+    else if (val === 2) {
       setMode("secondary");
-      document.body.style.backgroundColor = "white";
+      document.body.style.backgroundColor = "#6c757d";
       Alerting("success", "Successfully Enabled Light Mode")
     }
-    else if (val == 3) {
+    else if (val === 3) {
       setMode("success");
-      document.body.style.backgroundColor = "white";
-      Alerting("success", "Successfully Enabled Light Mode")
+      document.body.style.backgroundColor = "#198754";
+      Alerting("success", "Successfully Enabled secondary Mode")
     }
-    else if (val == 4) {
+    else if (val === 4) {
       setMode("danger");
-      document.body.style.backgroundColor = "white";
-      Alerting("success", "Successfully Enabled Light Mode")
+      document.body.style.backgroundColor = "#dc3545";
+      Alerting("success", "Successfully Enabled danger Mode")
     }
-    else if (val == 5) {
+    else if (val === 5) {
       setMode("warning");
-      document.body.style.backgroundColor = "white";
-      Alerting("success", "Successfully Enabled Light Mode")
+      document.body.style.backgroundColor = "#ffc107";
+      Alerting("success", "Successfully Enabled warning Mode")
     }
-    else if (val == 6) {
+    else if (val === 6) {
       setMode("info");
-      document.body.style.backgroundColor = "white";
-      Alerting("success", "Successfully Enabled Light Mode")
+      document.body.style.backgroundColor = "#0dcaf0";
+      Alerting("success", "Successfully Enabled info Mode")
     }
-    console.log("val");
+    console.log(val);
   }
 
   return (

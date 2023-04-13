@@ -14,7 +14,7 @@ export default function Textform(props) {
       document.getElementById("FindBtn").style.visibility = "visible";
        }
   }
-  const HandleOnUpper = (event) => {
+  const HandleOnUpper = () => {
     if(document.getElementById("exampleFormControlTextarea1").value !== ""){
       SetText(text.toUpperCase());
       props.alrtt("success","Successfully text converted into Upper Case")
@@ -23,7 +23,7 @@ export default function Textform(props) {
       props.alrtt("warning","Please type Something Capatalize")
     }
   }
-  const HandleOnLower = (event) => {
+  const HandleOnLower = () => {
     if(document.getElementById("exampleFormControlTextarea1").value !== ""){
       SetText(text.toLocaleLowerCase());
       props.alrtt("success","Successfully text converted into Lower Case")
@@ -32,7 +32,7 @@ export default function Textform(props) {
       props.alrtt("warning","Please type Something to convert them into lower case ")
     }
   }
-  const HandleOnProper = (event) => {
+  const HandleOnProper = () => {
     if(document.getElementById("exampleFormControlTextarea1").value !== ""){
       let tempArr = text.split(" ");
       let temp = "";
@@ -48,7 +48,7 @@ export default function Textform(props) {
       props.alrtt("warning","Please type Something to convert them into proper case ")
     }
   }
-  const Clear = (event) => {
+  const Clear = () => {
     if(document.getElementById("exampleFormControlTextarea1").value !== ""){
       SetText("");
       props.alrtt("success","Successfully text Cleared")
@@ -100,13 +100,13 @@ export default function Textform(props) {
   }
   
   return (
-    <div className={`mb-3 bg-${props.mode} ${props.mode === "dark"?"text-light":"text-dark"}`}>
+    <div className={`mb-3 bg-${props.mode} ${props.mode === "light"?"text-dark":"text-light"}`}>
 
       <div className="container">
         <h2>Your Text Summary</h2>
 
         <textarea
-          className={`form-control p-3 bg-${props.mode} ${props.mode === "dark"?"text-light":"text-dark"}`}
+          className={`form-control p-3 bg-${props.mode} ${props.mode === "light"?"text-dark":"text-light"}`}
           style={{backgroundColor: "rgb(48, 1, 1)",color : "white"}}
           id="exampleFormControlTextarea1"
           rows="9"
@@ -114,7 +114,7 @@ export default function Textform(props) {
           placeholder="Enter Text Here"
           onChange={HandleOnChange}
           autoFocus>
-        </textarea>
+        </textarea >
 
       </div>
       
@@ -126,13 +126,13 @@ export default function Textform(props) {
         <button id="FindBtn" className="btn btn-outline-primary m-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style={{visibility:"hidden"}}>Find</button>
         
         <div className="collapse" id="collapseExample">
-          <input className={`form-control my-3`} type="search" placeholder="Search Text Here.." aria-label="Search" onChange={HandleOnChangeFind} value={textFind}></input><span id="count" style={{color:"green",fontSize:"large"}}></span>
+          <input className={`form-control my-3`} type="search" placeholder="Search Text Here.." aria-label="Search" onChange={HandleOnChangeFind} value={textFind}></input><span id="count"  className={`${props.mode === "light"?"text-dark":"text-light"}`}></span>
           <input className={`form-control my-3`} id="replace" type="search" placeholder="Replace Text Here.." aria-label="Search"></input>
 
           <button onClick={ReplacingOne} className="btn btn-outline-danger m-2 " type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace</button>
           <button onClick={ReplacingAll} className="btn btn-outline-danger m-2 " type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace All</button>
         </div>
-        <div className={`bg-${props.mode} ${props.mode === "dark"?"text-light":"text-dark"}`}>
+        <div className={`bg-${props.mode} ${props.mode === "light"?"text-dark":"text-light"}`}>
           <h2>Your Text Summary</h2>
           <p>Your text Contains {text.split(" ").length - 1} words and {text.length} Characters</p>
           <h2>Preview</h2>

@@ -2,48 +2,67 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
   export default  function Navbar(props) {
-
+    
   const styley = {
     position:'absolute',
     right:"23%",
     top:"15px",
+    cursor: "pointer"
   }
 
   return (
     <nav  className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`} >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">{props.title}</a>
+        <a className="navbar-brand" >{props.title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">{props.name}</a>
+              <a className="nav-link active" aria-current="page" >{props.name}</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Link</a>
+              <a className="nav-link" >Link</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">{props.com}</a>
+              <a className="nav-link" >{props.com}</a>
             </li>
             <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Select color
           </a>
           <ul className="dropdown-menu">
-            <li onClick={props.Admode(1)}  className="dropdown-item" >primary</li>
-            <li onClick={props.Admode(2)} className="dropdown-item" >secondary</li>
-            <li onClick={props.Admode(3)} className="dropdown-item" >success</li>
-            <li onClick={props.Admode(4)} className="dropdown-item" >danger</li>
-            <li onClick={props.Admode(5)} className="dropdown-item" >warning</li>
-            <li onClick={props.Admode(6)} className="dropdown-item" >info</li>
+            <li onClick={()=>props.Admode(1)}  className="dropdown-item" >
+              <svg height="20" width="20">
+              <circle cx="10" cy="10" r="10" stroke="black" strokeWidth="1" fill="#0d6efd" />
+              </svg> primary</li>
+            <li onClick={()=>props.Admode(2)} className="dropdown-item" >
+              <svg height="20" width="20">
+              <circle cx="10" cy="10" r="10" stroke="black" strokeWidth="1" fill="#6c757d" />
+              </svg> secondary</li>
+            <li onClick={()=>props.Admode(3)} className="dropdown-item" >
+              <svg height="20" width="20">
+              <circle cx="10" cy="10" r="10" stroke="black" strokeWidth="1" fill="#198754" />
+              </svg> success</li>
+            <li onClick={()=>props.Admode(4)} className="dropdown-item" >
+              <svg height="20" width="20">
+              <circle cx="10" cy="10" r="10" stroke="black" strokeWidth="1" fill="#dc3545" />
+              </svg> danger</li>
+            <li onClick={()=>props.Admode(5)} className="dropdown-item" >
+              <svg height="20" width="20">
+              <circle cx="10" cy="10" r="10" stroke="black" strokeWidth="1" fill="#ffc107" />
+              </svg> warning</li>
+            <li onClick={()=>props.Admode(6)} className="dropdown-item" >
+              <svg height="20" width="20">
+              <circle cx="10" cy="10" r="10" stroke="black" strokeWidth="1" fill="#0dcaf0" />
+              </svg> info</li>
           </ul>
         </li>
           </ul>
 
           <div style={styley} className="form-check form-switch">
-              <input onClick={props.toggle} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={props.mode === "dark"?true:false} />
+              <input style={{cursor:"pointer"}} onClick={props.toggle} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={props.mode === "dark"?true:false} />
                 <label id="inp1" className={`text-${props.mode === "dark"? "light":"dark"}`} style={{fontSize:"13px"}} >Dark Mode</label>
             </div>
        
