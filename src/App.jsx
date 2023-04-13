@@ -3,10 +3,11 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import Textform from './Components/Textform';
 import Alert from './Components/Alert';
+import Footer from './Components/Footer';
 import { useState } from 'react';
 
 function App() {
-  const [Mode, setMode] = useState("dark");
+  const [Mode, setMode] = useState("light");
   const [Alerted, setAlert] = useState("");
 
   const AdvancedMode = {
@@ -25,7 +26,7 @@ function App() {
     })
     setTimeout(() => {
       setAlert(null);
-    }, 10000);
+    }, 2500);
   }
 
   const ModeChange = () => {
@@ -78,9 +79,10 @@ function App() {
 
   return (
     <>
-      <Navbar title="Blog" name="About" com="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle} />
+      <Navbar title="Blog" name="About" com="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle}/>
       <Alert alrt={Alerted} />
       <Textform alrtt={Alerting} mode={Mode} />
+      <Footer mode={Mode} Admode={AdvancedToggle}/>
     </>
   );
 }

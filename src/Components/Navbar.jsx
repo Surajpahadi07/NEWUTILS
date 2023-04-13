@@ -34,7 +34,7 @@ import PropTypes from 'prop-types';
             Select color
           </a>
           <ul className="dropdown-menu">
-            <li onClick={()=>props.Admode(1)}  className="dropdown-item" >
+            <li onClick={()=>props.Admode(1)} className="dropdown-item" >
               <svg height="20" width="20">
               <circle cx="10" cy="10" r="10" stroke="black" strokeWidth="1" fill="#0d6efd" />
               </svg> primary</li>
@@ -62,16 +62,17 @@ import PropTypes from 'prop-types';
         </li>
           </ul>
 
-          <div style={styley} className="form-check form-switch">
-              <input style={{cursor:"pointer"}} onClick={props.toggle} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={props.mode === "dark"?true:false} />
-                <label id="inp1" className={`text-${props.mode === "dark"? "light":"dark"}`} style={{fontSize:"13px"}} >Dark Mode</label>
-            </div>
+          
        
           <form className="d-flex" role="search">
             <input id="inp2" className={`form-control me-2 bg-${props.mode} text-${props.mode === "dark"?"light":"dark"}`} type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit" >Search</button>
           </form>
         </div>
+      </div>
+      <div style={styley} className="form-check form-switch">
+              <input style={{cursor:"pointer"}} onClick={props.toggle} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={props.mode === "dark"?true:false} />
+                <label id="inp1" className={`text-${props.mode === "dark"? "light":"dark"}`} style={{fontSize:"13px"}} >Dark Mode</label>
       </div>
     </nav>
   )

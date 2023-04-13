@@ -129,8 +129,8 @@ export default function Textform(props) {
           <input className={`form-control my-3`} type="search" placeholder="Search Text Here.." aria-label="Search" onChange={HandleOnChangeFind} value={textFind}></input><span id="count"  className={`${props.mode === "light"?"text-dark":"text-light"}`}></span>
           <input className={`form-control my-3`} id="replace" type="search" placeholder="Replace Text Here.." aria-label="Search"></input>
 
-          <button onClick={ReplacingOne} className="btn btn-outline-danger m-2 " type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace</button>
-          <button onClick={ReplacingAll} className="btn btn-outline-danger m-2 " type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace All</button>
+          <button onClick={ReplacingOne} className="btn btn-outline-danger m-2" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace</button>
+          <button onClick={ReplacingAll} className="btn btn-outline-danger m-2" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Replace All</button>
         </div>
         <div className={`bg-${props.mode} ${props.mode === "light"?"text-dark":"text-light"}`}>
           <h2>Your Text Summary</h2>
