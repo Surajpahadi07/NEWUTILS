@@ -4,20 +4,15 @@ import Navbar from './Components/Navbar';
 import Textform from './Components/Textform';
 import Alert from './Components/Alert';
 import Footer from './Components/Footer';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Profile from './Components/Profile';
 import { useState } from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 function App() {
   const [Mode, setMode] = useState("light");
   const [Alerted, setAlert] = useState("");
-
-  const AdvancedMode = {
-    1: "primary",
-    2: "secondary",
-    3: "success",
-    4: "danger",
-    5: "warning",
-    5: "info"
-  }
 
   const Alerting = (typ, msg) => {
     setAlert({
@@ -28,7 +23,6 @@ function App() {
       setAlert(null);
     }, 2500);
   }
-
   const ModeChange = () => {
     if (Mode === "dark") {
       setMode("light");
@@ -42,7 +36,6 @@ function App() {
     }
     console.log("val")
   }
-
   const AdvancedToggle = (val) => {
     if (val === 1) {
       setMode("primary");
@@ -78,12 +71,32 @@ function App() {
   }
 
   return (
-    <>
-      <Navbar title="Blog" name="About" com="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle}/>
+   
+    <Router>
+      <Navbar title="Home" about="About" contact="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle}/>
       <Alert alrt={Alerted} />
-      <Textform alrtt={Alerting} mode={Mode} />
-      <Footer mode={Mode} Admode={AdvancedToggle}/>
-    </>
+      
+      <Switch>
+
+          <Route path="/about" >
+            <Textform alrtt={Alerting} mode={Mode} />     
+          </Route>
+
+          <Route path="/">
+            <Contact  mode={Mode}/>
+          </Route>
+
+          <Route path="/">
+            <Profile  mode={Mode}/>
+          </Route>
+
+        </Switch>
+        
+        <Footer mode={Mode} Admode={AdvancedToggle}/>
+      </Router>
+
+
   );
 }
+
 export default App;

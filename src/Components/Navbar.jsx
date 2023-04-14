@@ -11,6 +11,8 @@ import PropTypes from 'prop-types';
     cursor: "pointer"
   }
 
+  
+
   return (
     <nav  className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`} >
       <div className="container-fluid">
@@ -21,13 +23,13 @@ import PropTypes from 'prop-types';
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" >{props.name}</a>
+              <a className="nav-link active" aria-current="page" >{props.about}</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" >Link</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" >{props.com}</a>
+              <a className="nav-link" >{props.contact}</a>
             </li>
             <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
