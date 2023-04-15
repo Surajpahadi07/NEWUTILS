@@ -1,12 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
+
 
 export default function About(props) {
+  const text = `text-${props.mode == "dark"? "light" : "dark"}`
+  const modi = `bg-${props.mode=="dark"? "secondary":"light" } `
+
+
   return (
     <>
       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
       <div class={`about-section paddingTB60 gray-bg bg-${props.mode} text-${props.mode === "dark" ? "light" : "dark"}`}>
         <div class="container">
           <div class="row">
+          <nav aria-label="breadcrumb" className={`${modi}  border border-${props.mode === "light"?"dark":"light"} rounded-3 p-3 mb-4 mt-4`}>
+          <ol className="breadcrumb mb-0">
+            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+            <li className={`breadcrumb-item ${text}`} aria-current="page">About</li>
+          </ol>
+        </nav>
             <div class="col-md-7 col-sm-6">
               <div class="about-title clearfix">
                 <h1>About <span>Appmom</span></h1>
