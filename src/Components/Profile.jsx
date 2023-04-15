@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Img from '../Img.jpg'
 
 export default function Profile(props){
-    const modi = `bg-${props.mode=="dark"? "secondary":"light" } `
-    const text = `text-${props.mode == "dark"? "light" : "dark"}`
+    const modi = `bg-${props.mode==="dark"? "secondary":"light" } `
+    const text = `text-${props.mode === "dark"? "light" : "dark"}`
     
   return (
     <section className={`mb-4 mb-3 bg-${props.mode} `} style={{backgroundColor: "#eee"}}>
@@ -13,7 +14,7 @@ export default function Profile(props){
         <nav aria-label="breadcrumb" className={`${modi}  border border-${props.mode === "light"?"dark":"light"} rounded-3 p-3 mb-4`}>
           <ol className="breadcrumb mb-0">
             <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-            <li className="breadcrumb-item"><a href="#">User</a></li>
+            <li className="breadcrumb-item"><a href="/">User</a></li>
             <li className={`breadcrumb-item ${text}`} aria-current="page">User Profile</li>
           </ol>
         </nav>
@@ -24,7 +25,7 @@ export default function Profile(props){
       <div className="col-lg-4">
         <div className={`card mb-4 ${modi} border border-${props.mode === "light"?"dark":"light"} rounded-3 p-3 mb-4`}>
           <div className={`card-body text-center`}>
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+            <img src={Img} alt="avatar"
               className="rounded-circle img-fluid" style={{width: "150px"}}/>
             <h5 className={`my-3 ${text}`}>Rahul chauhan</h5>
             <p className={`mb-1 ${text}`}>Full Stack Developer</p>

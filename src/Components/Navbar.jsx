@@ -2,6 +2,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import Img from '../Img.jpg'
+
 
   export default  function Navbar(props) {
     
@@ -12,13 +14,11 @@ import { Link } from "react-router-dom";
     cursor: "pointer"
   }
 
-  
-
   return (
     <nav  className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`} >
       <div className="container-fluid">
-        <Link className="navbar-brand" to='/profile'><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-              className={`rounded-circle img-fluid bg-${props.mode=="dark"? "light" : "dark"}`} style={{width: "30px"}}/></Link>
+        <Link className="navbar-brand" to='/profile'><img src={Img} alt="avatar"
+              className={`rounded-circle img-fluid bg-${props.mode==="dark"? "light" : "dark"}`} style={{width: "30px"}}/></Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +34,7 @@ import { Link } from "react-router-dom";
               <Link className="nav-link" to='/contact'>{props.contact}</Link>
             </li>
             <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Select color
           </a>
           <ul className="dropdown-menu">
@@ -70,7 +70,7 @@ import { Link } from "react-router-dom";
        
           <form className="d-flex" role="search">
             <input id="inp2" className={`form-control me-2 bg-${props.mode} text-${props.mode === "dark"?"light":"dark"}`} type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit" >Search</button>
+            <button className="btn btn-outline-success" >Search</button>
           </form>
         </div>
       </div>
