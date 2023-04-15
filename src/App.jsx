@@ -8,10 +8,10 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Profile from './Components/Profile';
 import { useState } from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 function App() {
-  const [Mode, setMode] = useState("light");
+  const [Mode, setMode] = useState(localStorage.getItem("M") == null? "light" : localStorage.getItem("M"));
   const [Alerted, setAlert] = useState("");
 
   const Alerting = (typ, msg) => {
@@ -26,15 +26,16 @@ function App() {
   const ModeChange = () => {
     if (Mode === "dark") {
       setMode("light");
+      localStorage.setItem("M","light");
       document.body.style.backgroundColor = "white";
       Alerting("success", "Successfully Enabled Light Mode")
     }
     else {
       setMode("dark");
+      localStorage.setItem("M","dark");
       document.body.style.backgroundColor = "#212529";
       Alerting("success", "Successfully Enabled Dark Mode")
     }
-    console.log("val")
   }
   const AdvancedToggle = (val) => {
     if (val === 1) {
@@ -73,28 +74,22 @@ function App() {
   return (
    
     <Router>
-      <Navbar title="Home" about="About" contact="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle}/>
-      <Alert alrt={Alerted} />
+          
+          <Navbar title="Home" about="About" contact="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle}/>
+          <Alert alrt={Alerted} />
+         
       
-      <Switch>
+        <Routes>
 
-          <Route path="/about" >
-            <Textform alrtt={Alerting} mode={Mode} />     
-          </Route>
-
-          <Route path="/">
-            <Contact  mode={Mode}/>
-          </Route>
-
-          <Route path="/">
-            <Profile  mode={Mode}/>
-          </Route>
-
-        </Switch>
+          <Route exact path="/" element={<Textform alrtt={Alerting} mode={Mode} />}/>
+          <Route exact path="/contact" element={<Contact  mode={Mode}/>}/>
+          <Route exact path="/profile" element={<Profile  mode={Mode}/>}/>
+          <Route exact path="/about" element={<About  mode={Mode}/>}/>
+            
+        </Routes>
         
-        <Footer mode={Mode} Admode={AdvancedToggle}/>
+          <Footer mode={Mode} Admode={AdvancedToggle}/>
       </Router>
-
 
   );
 }
