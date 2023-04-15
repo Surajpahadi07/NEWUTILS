@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Footer(props) {
   return (
+    <>    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <footer className={`text-center text-lg-start bg-${props.mode} ${props.mode === "light"?"text-dark":"text-light"}`}>
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
@@ -9,23 +11,26 @@ export default function Footer(props) {
         </div>
     
         <div>
-          <a href="/" className="me-4 text-reset">
-            <i className="fab fa-facebook-f"></i>
+          <a href="https://wa.me/9625809384" className="me-4 text-reset">
+            <i className="fa fa-whatsapp fa-2x"></i>
           </a>
           <a href="/" className="me-4 text-reset">
-            <i className="fab fa-twitter"></i>
+            <i className="fa fa-facebook-f fa-2x"></i>
           </a>
           <a href="/" className="me-4 text-reset">
-            <i className="fab fa-google"></i>
+            <i className="fa fa-twitter fa-2x"></i>
+          </a>
+          <a href="mailto:rahulchauhah50@gmail.com" className="me-4 text-reset">
+            <i className="fa fa-envelope fa-2x"></i>
           </a>
           <a href="/" className="me-4 text-reset">
-            <i className="fab fa-instagram"></i>
+            <i className="fa fa-instagram fa-2x"></i>
           </a>
-          <a href="/" className="me-4 text-reset">
-            <i className="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/rahul-chauhan-939102208" className="me-4 text-reset">
+            <i className="fa fa-linkedin fa-2x"></i>
           </a>
-          <a href="/" className="me-4 text-reset">
-            <i className="fab fa-github"></i>
+          <a href="https://github.com/Rahulchauhan50" className="me-4 text-reset">
+            <i className="fa fa-github fa-2x"></i>
           </a>
         </div>
       </section>
@@ -81,13 +86,13 @@ export default function Footer(props) {
     
             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-              <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
+              <p><i className="fa fa-home me-3"></i> New York, NY 10012, US</p>
               <p>
-                <i className="fas fa-envelope me-3"></i>
-                info@example.com
+                <i className="fa fa-envelope me-3"></i>
+                Rahulchauhah50@gmail.com
               </p>
-              <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-              <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
+              <p><i className="fa fa-phone me-3"></i> + 91 96258 09384</p>
+              <p><i className="fa fa-print me-3"></i> + 01 234 567 89</p>
             </div>
           </div>
         </div>
@@ -98,5 +103,6 @@ export default function Footer(props) {
         <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
       </div>
     </footer>
+</>
   )
 }
