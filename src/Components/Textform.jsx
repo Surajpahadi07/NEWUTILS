@@ -49,6 +49,10 @@ export default function Textform(props) {
       props.alrtt("warning", "Please type Something to convert them into proper case ")
     }
   }
+  const HandleOnCopy = () => {
+    navigator.clipboard.writeText(text);
+    props.alrtt("success", "Successfully text Copied")
+  }
   const Clear = () => {
     if (document.getElementById("exampleFormControlTextarea1").value !== "") {
       SetText("");
@@ -63,7 +67,8 @@ export default function Textform(props) {
     document.getElementById("Pre").innerHTML = text;
     SetTextFind(event.target.value);
     let find = event.target.value;
-    if (find == text.match(find)) {
+    console.log(text.match(find)[0])
+    if (find === text.match(find)[0]) {
       var Reg = new RegExp(find, "gi");
       document.getElementById("Pre").innerHTML = text.replace(Reg, '<span>' + find + '</span>');
       let spanArr = document.getElementById("Pre").getElementsByTagName("span");
@@ -97,13 +102,24 @@ export default function Textform(props) {
       props.alrtt("warning", "Please Enter Something For replace")
     }
   }
+  // const styFind = {
+  //   position:'relative',
+  //   left:"35%",
+  //   // top:"15px",
+  //   cursor: "pointer"
+  // }
 
 
   return (
     <div className={`mb-3 bg-${props.mode} ${props.mode === "light" ? "text-dark" : "text-light"}`}>
 
       <div className="container">
-        <h2>Enter Text here...</h2>
+        <div className="row">
+        <h2 className="col-6">Enter Text here...</h2>
+        <div className="col-3"></div>
+        <div className="col-2"><button id="FindBtn" className="btn btn-outline-primary ms-3 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style={{visibility: "hidden"}}>Find</button></div>
+
+        </div>
 
         <textarea
           className={`form-control p-3 bg-${props.mode} ${props.mode === "light" ? "text-dark" : "text-light"}`}
@@ -122,8 +138,9 @@ export default function Textform(props) {
         <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnUpper}>Upper</button>
         <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnLower}>Lower</button>
         <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnProper}>Proper</button>
-        <button type="button" className="btn btn-outline-primary m-2 " onClick={Clear}>Clear</button>
-        <button id="FindBtn" className="btn btn-outline-primary m-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style={{ visibility: "hidden" }}>Find</button>
+        <button type="button" className="btn btn-outline-primary m-2 " onClick={HandleOnCopy}>Copy</button>
+        <button type="button" className="btn btn-outline-primary ms-2 " onClick={Clear}>Clear</button>
+        
 
         <div className="collapse" id="collapseExample">
           <input className={`form-control my-3`} type="search" placeholder="Search Text Here.." aria-label="Search" onChange={HandleOnChangeFind} value={textFind}></input><span id="count" className={`${props.mode === "light" ? "text-dark" : "text-light"}`}></span>

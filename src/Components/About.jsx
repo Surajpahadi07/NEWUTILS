@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function About(props) {
   const text = `text-${props.mode === "dark"? "light" : "dark"}`
   const modi = `bg-${props.mode === "dark"? "secondary":"light" } `
- 
+
 
   return (
     <>

@@ -59,6 +59,10 @@ export default function Profile(props){
                 <i className="fa fa-facebook-f fa-lg" style={{color: "#image.png"}}></i>
                 <p className={`mb-0 ${text}`}><a className='link-light' href='https://facebook.com'>https://facebook.com</a></p>
               </li>
+              <li className={`list-group-item d-flex justify-content-between align-items-center p-3 ${modi}`}>
+                <i className="fa fa-facebook-f fa-lg" style={{color: "#image.png"}}></i>
+                <p className={`mb-0 ${text}`}><a href="sms:+91 9625809384">Click here to text us!</a></p>
+              </li>
             </ul>
           </div>
         </div>

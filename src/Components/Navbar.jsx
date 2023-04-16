@@ -6,14 +6,13 @@ import Img from '../Img.jpg'
 
 
   export default  function Navbar(props) {
-    
-  const styley = {
-    position:'absolute',
-    right:"23%",
-    top:"15px",
-    cursor: "pointer"
-  }
-
+    const styley = {
+      position:'absolute',
+      right:"23%",
+      top:"15px",
+      cursor: "pointer"
+    }
+  
   return (
     <nav  className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`} >
       <div className="container-fluid">
@@ -66,8 +65,6 @@ import Img from '../Img.jpg'
         </li>
           </ul>
 
-          
-       
           <form className="d-flex" role="search">
             <input id="inp2" className={`form-control me-2 bg-${props.mode} text-${props.mode === "dark"?"light":"dark"}`} type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" >Search</button>
@@ -78,6 +75,7 @@ import Img from '../Img.jpg'
               <input style={{cursor:"pointer"}} onClick={props.toggle} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={props.mode === "dark"?true:false} />
                 <label id="inp1" className={`text-${props.mode === "dark"? "light":"dark"}`} style={{fontSize:"13px"}} >Dark Mode</label>
       </div>
+
     </nav>
   )
 }

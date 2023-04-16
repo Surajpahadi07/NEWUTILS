@@ -2,35 +2,41 @@ import React from 'react'
 
 export default function Footer(props) {
   return (
-    <>    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <>    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <footer className={`text-center text-lg-start bg-${props.mode} ${props.mode === "light"?"text-dark":"text-light"}`}>
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
         </div>
-    
         <div>
           <a href="https://wa.me/9625809384" className="me-4 text-reset">
-            <i className="fa fa-whatsapp fa-2x"></i>
+            <i className="fa fa-whatsapp fa-1x"></i>
           </a>
           <a href="/" className="me-4 text-reset">
-            <i className="fa fa-facebook-f fa-2x"></i>
+            <i className="fa fa-facebook-f fa-1x"></i>
           </a>
           <a href="/" className="me-4 text-reset">
-            <i className="fa fa-twitter fa-2x"></i>
+            <i className="fa fa-twitter fa-1x"></i>
           </a>
           <a href="mailto:rahulchauhah50@gmail.com" className="me-4 text-reset">
-            <i className="fa fa-envelope fa-2x"></i>
+            <i className="fa fa-envelope fa-1x"></i>
           </a>
           <a href="/" className="me-4 text-reset">
-            <i className="fa fa-instagram fa-2x"></i>
+            <i className="fa fa-instagram fa-1x"></i>
           </a>
           <a href="https://www.linkedin.com/in/rahul-chauhan-939102208" className="me-4 text-reset">
-            <i className="fa fa-linkedin fa-2x"></i>
+            <i className="fa fa-linkedin fa-1x"></i>
           </a>
           <a href="https://github.com/Rahulchauhan50" className="me-4 text-reset">
-            <i className="fa fa-github fa-2x"></i>
+            <i className="fa fa-github fa-1x"></i>
+          </a>
+          <a href="sms:+91 9625809384" className="me-4 text-reset">
+          <strong className="fa fa-1x"><big>&#9743;</big></strong>
+          </a>
+          <a href="tel:+91 9625809384" className="me-4 text-reset">
+          <strong className="fa fa-1x"><big>&#9742;</big></strong>
           </a>
         </div>
       </section>
@@ -40,7 +46,7 @@ export default function Footer(props) {
           <div className="row mt-3">
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
-                <i className="fas fa-gem me-3"></i>Company name
+                <i className="fa fa-gem me-3"></i>Company name
               </h6>
               <p>
                 Here you can use rows and columns to organize your footer content. Lorem ipsum
