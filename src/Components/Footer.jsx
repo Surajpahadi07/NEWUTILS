@@ -33,10 +33,10 @@ export default function Footer(props) {
             <i className="fa fa-github fa-1x"></i>
           </a>
           <a href="sms:+91 9625809384" className="me-4 text-reset">
-          <strong className="fa fa-1x"><big>&#9743;</big></strong>
+          <strong className="fa fa-comments-o fa-1x"></strong>
           </a>
           <a href="tel:+91 9625809384" className="me-4 text-reset">
-          <strong className="fa fa-1x"><big>&#9742;</big></strong>
+          <strong className="fa fa-phone fa-1x"></strong>
           </a>
         </div>
       </section>
