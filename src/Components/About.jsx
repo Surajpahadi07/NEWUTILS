@@ -6,12 +6,11 @@ export default function About(props) {
   const text = `text-${props.mode === "dark"? "light" : "dark"}`
   const modi = `bg-${props.mode === "dark"? "secondary":"light" } `
 
-
   return (
     <>
       <div class={`about-section paddingTB60 gray-bg bg-${props.mode} text-${props.mode === "dark" ? "light" : "dark"}`}>
         <div class="container">
-          <div class="row">
+          <div class="row"> 
           <nav aria-label="breadcrumb" className={`${modi}  border border-${props.mode === "light"?"dark":"light"} rounded-3 p-3 mb-4 mt-4`}>
           <ol className="breadcrumb mb-0">
             <li className="breadcrumb-item"><Link to="/">Home</Link></li>

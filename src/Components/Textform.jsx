@@ -69,7 +69,7 @@ export default function Textform(props) {
     let find = event.target.value;
     console.log(text.match(find)[0])
     if (find === text.match(find)[0]) {
-      var Reg = new RegExp(find, "gi");
+      var Reg = new RegExp(find, "g");
       document.getElementById("Pre").innerHTML = text.replace(Reg, '<span>' + find + '</span>');
       let spanArr = document.getElementById("Pre").getElementsByTagName("span");
       for (let i = 0; i < spanArr.length; i++) {

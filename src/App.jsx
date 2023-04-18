@@ -8,7 +8,7 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Profile from './Components/Profile';
 import { useState } from 'react';
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
   const [Mode, setMode] = useState(localStorage.getItem("M") == null? "light" : localStorage.getItem("M"));

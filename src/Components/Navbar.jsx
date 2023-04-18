@@ -12,9 +12,13 @@ import Img from '../Img.jpg'
       top:"15px",
       cursor: "pointer"
     }
+    let Back = () => {
+      document.body.style.backgroundColor = "#212529";
+    }
+    
   
   return (
-    <nav  className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`} >
+    <nav  className={`navbar navbar-expand-lg bg-${props.mode} ${props.mode === "dark"? Back(): ""} navbar-${props.mode}`} >
       <div className="container-fluid">
         <Link className="navbar-brand" to='/profile'><img src={Img} alt="avatar"
               className={`rounded-circle img-fluid bg-${props.mode==="dark"? "light" : "dark"}`} style={{width: "30px"}}/></Link>

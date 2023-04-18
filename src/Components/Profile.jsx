@@ -41,27 +41,23 @@ export default function Profile(props){
             <ul className={`list-group list-group-flush rounded-3 ${modi}`}>
               <li className={`list-group-item d-flex justify-content-between align-items-center p-3 ${modi}`}>
                 <i className="fa fa-globe fa-lg text-warning"></i>
-                <p className={`mb-0 ${text}`}><a className='link-light' href='https://rahulchauhah50.com'>https://rahulchauhah50.com</a></p>
+                <p className={`mb-0 ${text}`}><a className={`link-${props.mode === "dark"? "light" : "dark"}`} href='https://rahulchauhah50.com'>https://rahulchauhah50.com</a></p>
               </li>
               <li className={`list-group-item d-flex justify-content-between align-items-center p-3 ${modi}`}>
                 <i className="fa fa-github fa-lg" style={{color: "#333333"}}></i>
-                <p className={`mb-0 ${text} `}><a  className='link-light' href='https://github.com/Rahulchauhan50'>https://github.com/Rahulchauhan50</a></p>
+                <p className={`mb-0 ${text} `}><a  className={`link-${props.mode === "dark"? "light" : "dark"}`} href='https://github.com/Rahulchauhan50'>https://github.com/Rahulchauhan50</a></p>
               </li>
               <li className={`list-group-item d-flex justify-content-between align-items-center p-3 ${modi}`}>
                 <i className="fa fa-twitter fa-lg" style={{color: "#55acee"}} ></i>
-                <p className={`mb-0 ${text}`}><a className='link-light' href='https://twiter.com'>https://twiter.com</a></p>
+                <p className={`mb-0 ${text}`}><a className={`link-${props.mode === "dark"? "light" : "dark"}`} href='https://twiter.com'>https://twiter.com</a></p>
               </li>
               <li className={`list-group-item d-flex justify-content-between align-items-center p-3 ${modi}`}>
                 <i className="fa fa-instagram fa-lg" style={{color: "#ac2bac"}}></i>
-                <p className={`mb-0 ${text}`}><a className='link-light' href='https://intagram.com'>https://intagram.com</a></p>
+                <p className={`mb-0 ${text}`}><a className={`link-${props.mode === "dark"? "light" : "dark"}`} href='https://intagram.com'>https://intagram.com</a></p>
               </li>
               <li className={`list-group-item d-flex justify-content-between align-items-center p-3 ${modi}`}>
                 <i className="fa fa-facebook-f fa-lg" style={{color: "#image.png"}}></i>
-                <p className={`mb-0 ${text}`}><a className='link-light' href='https://facebook.com'>https://facebook.com</a></p>
-              </li>
-              <li className={`list-group-item d-flex justify-content-between align-items-center p-3 ${modi}`}>
-                <i className="fa fa-facebook-f fa-lg" style={{color: "#image.png"}}></i>
-                <p className={`mb-0 ${text}`}><a href="sms:+91 9625809384">Click here to text us!</a></p>
+                <p className={`mb-0 ${text}`}><a className={`link-${props.mode === "dark"? "light" : "dark"}`} href='https://facebook.com'>https://facebook.com</a></p>
               </li>
             </ul>
           </div>
