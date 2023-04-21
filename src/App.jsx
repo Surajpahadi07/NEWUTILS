@@ -13,6 +13,10 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 function App() {
   const [Mode, setMode] = useState(localStorage.getItem("M") == null? "light" : localStorage.getItem("M"));
   const [Alerted, setAlert] = useState("");
+  const [searchQuery, setsearchQuery] = useState('');
+  const SetQuery = (Queries) => {
+    setsearchQuery(`https://www.google.com/search?q=${Queries}&sxsrf=APwXEdcAAXDoYRiqWuSKjB17Nvb3mzPCiQ%3A1682086799255&source=hp&ei=j5tCZN6NDb_v2roPtvmY8Ac&iflsig=AOEireoAAAAAZEKpnxbR1mczlX2OXf7hkJGT4DxgmqWS&ved=0ahUKEwiekZjRlbv-AhW_t1YBHbY8Bn4Q4dUDCAk&uact=5&oq=hello&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyDgguEIoFELEDENQCEJECMggIABCKBRCRAjIOCC4QigUQsQMQ1AIQkQIyBwgAEIoFEEMyCwgAEIoFELEDEIMBMgsIABCKBRCxAxCDATIICAAQgAQQsQM6BwgjEOoCECc6CwgAEIAEELEDEIMBOgsILhCABBCxAxCDAToRCC4QgwEQxwEQsQMQ0QMQgAQ6BQgAEIAEUKkBWNYIYIcLaAFwAHgAgAHBBogBsgmSAQczLTEuNi0xmAEAoAEBsAEK&sclient=gws-wiz&safe=active`)
+  }
 
   const Alerting = (typ, msg) => {
     setAlert({
@@ -75,13 +79,12 @@ function App() {
    
     <Router>
           
-          <Navbar title="Home" about="About" contact="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle}/>
+          <Navbar title="Home" about="About" contact="Contact us" mode={Mode} toggle={ModeChange} Admode={AdvancedToggle} search={searchQuery} seetQuery={SetQuery}/>
           <Alert alrt={Alerted} />
-         
+          <Textform alrtt={Alerting} mode={Mode} />
       
         <Routes>
 
-          <Route exact path="/" element={<Textform alrtt={Alerting} mode={Mode} />}/>
           <Route exact path="/contact" element={<Contact  mode={Mode}/>}/>
           <Route exact path="/profile" element={<Profile  mode={Mode}/>}/>
           <Route exact path="/about" element={<About  mode={Mode}/>}/>

@@ -1,22 +1,22 @@
-
 import React from 'react'
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import Img from '../Img.jpg'
 
-
   export default  function Navbar(props) {
     const styley = {
       position:'absolute',
-      right:"23%",
+      right:"25%",
       top:"15px",
       cursor: "pointer"
     }
     let Back = () => {
       document.body.style.backgroundColor = "#212529";
     }
-    
-  
+    const settingQuery = () => {
+      props.seetQuery(document.getElementById('inp2').value)
+    }
+ 
   return (
     <nav  className={`navbar navbar-expand-lg bg-${props.mode} ${props.mode === "dark"? Back(): ""} navbar-${props.mode}`} >
       <div className="container-fluid">
@@ -28,7 +28,7 @@ import Img from '../Img.jpg'
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to='/' >{props.title}</Link>
+              <Link className="nav-link" aria-current="page" to='/' >{props.title}</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to='/about'>{props.about}</Link>
@@ -37,9 +37,9 @@ import Img from '../Img.jpg'
               <Link className="nav-link" to='/contact'>{props.contact}</Link>
             </li>
             <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Select color
-          </a>
+          </Link>
           <ul className="dropdown-menu">
             <li onClick={()=>props.Admode(1)} className="dropdown-item btn" >
               <svg height="20" width="20">
@@ -70,8 +70,8 @@ import Img from '../Img.jpg'
           </ul>
 
           <form className="d-flex" role="search">
-            <input id="inp2" className={`form-control me-2 bg-${props.mode} text-${props.mode === "dark"?"light":"dark"}`} type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" >Search</button>
+            <input onChange={settingQuery} id="inp2" className={`form-control me-2 bg-${props.mode} text-${props.mode === "dark"?"light":"dark"}`} type="search" placeholder="Search" aria-label="Search" />
+            <button className='btn btn-outline-primary'><a className='link-primary' style={{textDecoration:'none'}} href={props.search} >search</a></button>
           </form>
         </div>
       </div>

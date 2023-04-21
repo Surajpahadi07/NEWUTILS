@@ -14,7 +14,7 @@ export default function Footer(props) {
           <a href="https://wa.me/9625809384" className="me-4 text-reset">
             <i className="fa fa-whatsapp fa-1x"></i>
           </a>
-          <a href="/" className="me-4 text-reset">
+          <a href="https://www.facebook.com/profile.php?id=100013005587099&mibextid=ZbWKwL" className="me-4 text-reset">
             <i className="fa fa-facebook-f fa-1x"></i>
           </a>
           <a href="/" className="me-4 text-reset">

@@ -67,8 +67,8 @@ export default function Textform(props) {
     document.getElementById("Pre").innerHTML = text;
     SetTextFind(event.target.value);
     let find = event.target.value;
-    console.log(text.match(find)[0])
-    if (find === text.match(find)[0]) {
+    console.log(text.match(find))
+    if (find === text.match(find)) {
       var Reg = new RegExp(find, "g");
       document.getElementById("Pre").innerHTML = text.replace(Reg, '<span>' + find + '</span>');
       let spanArr = document.getElementById("Pre").getElementsByTagName("span");
@@ -102,13 +102,6 @@ export default function Textform(props) {
       props.alrtt("warning", "Please Enter Something For replace")
     }
   }
-  // const styFind = {
-  //   position:'relative',
-  //   left:"35%",
-  //   // top:"15px",
-  //   cursor: "pointer"
-  // }
-
 
   return (
     <div className={`mb-3 bg-${props.mode} ${props.mode === "light" ? "text-dark" : "text-light"}`}>
