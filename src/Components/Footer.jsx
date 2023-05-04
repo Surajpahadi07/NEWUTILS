@@ -48,9 +48,7 @@ export default function Footer(props) {
               <h6 className="text-uppercase fw-bold mb-4">
                 <i className="fa fa-gem me-3"></i>Company name
               </h6>
-              <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit.
+              <p>isicing elit.
               </p>
             </div>
     
